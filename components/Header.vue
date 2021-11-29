@@ -9,7 +9,9 @@
         <ul class="nav__wrapper">
           <li class="nav__item"><nuxt-link to="/">サインアップ</nuxt-link></li>
           <li class="nav__item"><nuxt-link to="/login">ログイン</nuxt-link></li>
-          <li class="nav__item"><a href="#">Services</a></li>
+          <li class="nav__item">
+            <nuxt-link to="/welcome">ユーザー専用ページ</nuxt-link>
+          </li>
           <li class="nav__item"><a href="#">Hire us</a></li>
           <li class="nav__item"><a href="#">Contact</a></li>
         </ul>

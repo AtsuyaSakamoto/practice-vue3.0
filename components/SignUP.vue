@@ -1,12 +1,20 @@
 <template>
   <div>
+    <!-- <p>{{ state.mail }}</p>
+    <p>{{ state.pass }}</p> -->
     <h1>サインアップ</h1>
     <input
       type="text"
       placeholder="メールアドレスを入力"
       v-model="state.mail"
+      @input="handleInput"
     /><br />
-    <input type="text" placeholder="パスワード" /><br />
+    <input
+      type="text"
+      placeholder="パスワード"
+      v-model="state.pass"
+      @input="handleInput"
+    /><br />
     <div class="btn" @click="signup">サインアップ</div>
   </div>
 </template>
@@ -21,9 +29,14 @@ interface UserInfo {
 }
 
 export default defineComponent({
+  props: {
+    value: {
+      type: [String, Number],
+      default: '',
+    },
+  },
+  emits: ['input'],
   setup(props, context) {
-    props: ['state.mail']
-
     const state = reactive<UserInfo>({
       mail: '',
       pass: '',
@@ -42,9 +55,15 @@ export default defineComponent({
       console.log(state.pass)
     }
 
+    const handleInput = (e: Event) => {
+      const target = e.target as HTMLTextAreaElement
+      context.emit('input', target.value)
+    }
+
     return {
       state,
       signup,
+      handleInput,
     }
   },
 })

@@ -48,6 +48,7 @@ import {
   reactive,
   ref,
   useRouter,
+  computed,
   watchEffect,
 } from '@nuxtjs/composition-api'
 import { auth, db } from '../plugins/firebase'

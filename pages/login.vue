@@ -4,8 +4,14 @@
       type="text"
       placeholder="メールアドレスを入力"
       v-model="state.mail"
+      v-show="!signInUser"
     /><br />
-    <input type="text" placeholder="パスワード" v-model="state.pass" /><br />
+    <input
+      type="text"
+      placeholder="パスワード"
+      v-model="state.pass"
+      v-show="!signInUser"
+    /><br />
     <p><button @click="login" v-show="!signInUser">ログイン</button></p>
     <p><button @click="logout" v-show="signInUser">ログアウト</button></p>
   </div>
