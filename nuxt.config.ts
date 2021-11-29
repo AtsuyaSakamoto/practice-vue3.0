@@ -37,36 +37,8 @@ const config: NuxtConfig = {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    // '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
-    // [
-    //   '@nuxtjs/firebase',
-    //   {
-    //     config: {
-    //       apiKey: 'AIzaSyBhyxujYfrruPLpLLa4ma57gBlO6tcVQk0',
-    //       authDomain: 'nuxt-example-b038b.firebaseapp.com',
-    //       projectId: 'nuxt-example-b038b',
-    //       storageBucket: 'nuxt-example-b038b.appspot.com',
-    //       messagingSenderId: '905649210872',
-    //       appId: '1:905649210872:web:44dc483ee14dc0cc31820d',
-    //       measurementId: 'G-SSW1ZRFF38',
-    //     },
-    //     services: {
-    //       auth: {
-    //         persistence: 'local', // default
-    //         initialize: {
-    //           // onAuthStateChangedMutation: 'ON_AUTH_STATE_CHANGED_MUTATION',
-    //           // onAuthStateChangedAction: 'onAuthStateChangedAction',
-    //           // subscribeManually: false,
-    //         },
-    //         // ssr: false,
-    //         // emulatorPort: 9099,
-    //         // emulatorHost: 'http://localhost',
-    //       },
-    //       firestore: true,
-    //       storage: true,
-    //     },
-    //   },
-    // ],
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -74,5 +46,14 @@ const config: NuxtConfig = {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  // workbox: {
+  //   // firebaseのauth周りが使えうように、CDNでfirebase-appとfirebase-authを追加
+  //   importScripts: [
+  //     'https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js',
+  //     'https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js',
+  //     'sw-firebase-auth.js',
+  //   ],
+  //   dev: process.env.MODE !== 'production',
+  // },
 }
 export default config
